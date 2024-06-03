@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+       
+</head>
+<body>
+    
+    <div class="container">
+        <h1 id="status">Tic Tac Toe</h1>
+        <div id="gameMode">
+            <button class="glowbutton"onclick="chooseGameMode('single')">Single Player</button>
+            <button class="glowbutton"onclick="chooseGameMode('multi')">Multiplayer</button>
+        </div>
+        <div id="timer" style="display: none;">Game starting in <span id="countdown">3</span> seconds</div>
+        <div id="board" class="board" style="display: none;">
+            <div class="cell" onclick="handleClick(0)"></div>
+            <div class="cell" onclick="handleClick(1)"></div>
+            <div class="cell" onclick="handleClick(2)"></div>
+            <div class="cell" onclick="handleClick(3)"></div>
+            <div class="cell" onclick="handleClick(4)"></div>
+            <div class="cell" onclick="handleClick(5)"></div>
+            <div class="cell" onclick="handleClick(6)"></div>
+            <div class="cell" onclick="handleClick(7)"></div>
+            <div class="cell" onclick="handleClick(8)"></div>
+        </div>
+        <div id="options" class="options" style="display: none;">
+            <button id="rematchBtn"class="glowbutton" onclick="restartGame()">Rematch (<span id="rematchTimer">10</span>)</button>
+            <button id="switchModeBtn"class="glowbutton" onclick="switchGameMode()">Switch Mode</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+        
+</body>
+</html>

@@ -1,0 +1,158 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #0f0e0e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00e6e6, 0 0 15px #00e6e6, 0 0 20px #00e6e6;
+}
+
+h1 {
+    color: #00e6e6;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00e6e6, 0 0 15px #00e6e6, 0 0 20px #00e6e6;
+}
+
+#timer {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #00e6e6;
+    text-shadow: 0 0 5px #00e6e6, 0 0 10px #00e6e6;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px); 
+    grid-template-rows: repeat(3, 150px); 
+    gap: 5px;
+    border: 2px solid #00e6e6;
+    background-color: #040404;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 0 10px #00e6e6, 0 0 15px #00e6e6;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #00e6e6;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: #00e6e6;
+    box-shadow: 0 0 10px #00e6e6, 0 0 15px #00e6e6;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cell:hover {
+    background-color: #eaeaea;
+    box-shadow: 0 0 10px #00e6e6, 0 0 15px #00e6e6;
+}
+
+.cell.x {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiIgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiPjxsaW5lIHgxPSIxLjQxNyIgeTE9IjEuNDE3IiB4Mj0iMTAuNTgyIiB5Mj0iMTAuNTgyIiBzdHJva2U9InJlZCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iMS40MTciIHkxPSIxMC41ODIiIHgyPSIxMC41ODIiIHkyPSIxLjQxNyIgc3Ryb2tlPSJyZWQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+');
+    box-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347;
+}
+
+.cell.o {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiIgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiPjxjaXJjbGUgY3g9IjYiIGN5PSI2IiByPSI0LjUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PC9zdmc+');
+    box-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff;     
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.glowbutton {
+--glow-color: rgb(176, 252, 255);
+--glow-spread-color: rgba(123, 251, 255, 0.781);
+--enhanced-glow-color: rgb(206, 255, 255);
+--btn-color: rgb(61, 127, 136);
+border: 0.25em solid var(--glow-color);
+padding: 1em 3em;
+color: var(--glow-color);
+font-size: 15px;
+font-weight: bold;
+background-color: var(--btn-color);
+border-radius: 1em;
+outline: none;
+box-shadow: 0 0 1em 0.25em var(--glow-color),
+0 0 4em 1em var(--glow-spread-color),
+inset 0 0 0.75em 0.25em var(--glow-color);
+text-shadow: 0 0 0.5em var(--glow-color);
+position: relative;
+transition: all 0.3s;
+}
+
+.glowbutton {
+--glow-color: rgb(176, 252, 255);
+--glow-spread-color: rgba(123, 251, 255, 0.5);
+--enhanced-glow-color: rgb(206, 255, 255);
+--btn-color: rgb(61, 127, 136);
+border: 0.25em solid var(--glow-color);
+padding: 1em 3em;
+color: var(--glow-color);
+font-size: 15px;
+font-weight: bold;
+background-color: var(--btn-color);
+border-radius: 1em;
+outline: none;
+box-shadow: 0 0 1em 0.25em var(--glow-color),
+0 0 2em 1em var(--glow-spread-color), 
+inset 0 0 0.75em 0.25em var(--glow-color);
+text-shadow: 0 0 0.5em var(--glow-color);
+position: relative;
+transition: all 0.3s;
+}
+
+.glowbutton::after {
+pointer-events: none;
+content: "";
+position: absolute;
+top: 120%;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: var(--glow-spread-color);
+filter: blur(1em); 
+opacity: 0.7;
+transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.glowbutton:hover {
+color: var(--btn-color);
+background-color: var(--glow-color);
+box-shadow: 0 0 1em 0.25em var(--glow-color),
+0 0 2em 1.5em var(--glow-spread-color), 
+inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.glowbutton:active {
+box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+0 0 2.5em 1.5em var(--glow-spread-color), 
+inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+
+
+#status {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00e6e6, 0 0 15px #00e6e6;
+}
+
+#gameMode {
+    margin-bottom: 20px;
+}
